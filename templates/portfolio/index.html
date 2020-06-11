@@ -1,0 +1,28 @@
+{% extends 'portfolio/base.html'%}
+{% load bootstrap4 %}
+{% load static %}
+{% block styles %}
+    {% bootstrap_css %}
+    <link rel="stylesheet" href="{%static 'css/style.css'%}"  >
+    <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Poppins'>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+{% endblock %}
+{% block content %}
+<!-- <div  id="home">
+    <div class="landing">
+        <div class="home-wrap">
+            <div class="home-inner">
+
+            </div>
+        </div>
+    </div>
+    <div class="caption text-center">
+        <h1>Welcome</h1>
+        <h3>Am Dynamo Denis</h3>
+        <h5><span>A Web Developer</span><span>Software Developer</span></h5>
+        <a href="#projects" class="btn btn-outline-dark btn-lg">Get Started</a>
+        <h4></h4>
+    </div>
+</div> -->
+{% endblock %}

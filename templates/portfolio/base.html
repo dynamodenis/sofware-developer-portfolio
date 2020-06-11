@@ -1,0 +1,119 @@
+{% load bootstrap4%}
+{% load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% if title%}
+    <title>DynamoDenis | {{title}}</title>
+    {% else %}
+    <title>DynamoDenis</title>
+    {% endif%}
+    {% block styles %}
+        {% bootstrap_css %}
+        <link rel="stylesheet" href="{%static 'css/style.css'%}"  >
+        <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Poppins'>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    {% endblock %}
+</head>
+<body data-spy="scroll" data-target="#navbarResponsive">
+    <div id="home">
+        <nav class="navbar navbar-expand-sm navbar-dark bg-dark fixed-top">
+            <a class="navbar-brand " id='name' href="" ><span class="material-icons mr-2 mb-1" style="font-size:0.8em ;">
+                laptop_windows
+                </span>DynamoDenis</a>
+            <a href=""></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                <a class="nav-link" href="#home">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#projects">Projects</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#about">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#contact">Contact</a>
+                </li>
+            </ul>
+            </div>
+        </nav>
+        <!-- end of navigation -->
+        <div class="landing">
+            <div class="home-wrap">
+                <div class="home-inner">
+
+                </div>
+            </div>
+        </div>
+        <div class="caption text-center">
+            <h1>Welcome</h1>
+            <h3>Am Dynamo Denis</h3>
+            <h5><span>A Web Developer</span><span>Software Developer</span></h5>
+            <a href="#projects" class="btn btn-outline-light btn-lg">Get Started</a>
+            <h4></h4>
+        </div>
+        <div class="dark">
+
+        </div>
+    </div>
+    <!-- Projects -->
+    <div id="projects">
+        
+    </div>
+
+        <!-- About -->
+    <div id="about">
+
+    </div>
+
+    <div id="contact">
+
+    </div>
+        <!-- <nav class="navbar navbar-expand-sm fixed-top header">
+            <a class="navbar-brand " id='name' href="" ><span class="material-icons mr-2 mb-1" style="font-size:0.8em ;">
+                laptop_windows
+                </span>DynamoDenis</a>
+            <a href=""></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon" ></span>
+            </button>
+            <div class="collapse navbar-collapse " id="navbarNavDropdown">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                <a class="nav-link" href="">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#projects">Projects</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#about">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#contact">Contact</a>
+                </li>
+            </ul>
+            </div>
+        </nav> -->
+    <div class="text-center">
+        {% if messages %}
+            {% for message in messages%}
+                <div class="alert alert-{{message.tags}}">{{message}}</div>
+            {% endfor%}
+        {% endif %}
+    </div>
+    {% block content%}
+    {% endblock %}
+    {% block scripts %}
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    {% bootstrap_javascript%}
+    {% endblock %}
+</body>
+</html>
