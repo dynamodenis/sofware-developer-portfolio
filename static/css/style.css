@@ -83,6 +83,87 @@ body{
     left: 0;
 }
 
+/* PROJECT PORTFOLIO */
+.legend{
+    font-size: 2rem;
+    font-weight: 700;
+    text-shadow: .1rem .1rem .8rem black;
+    letter-spacing: .3rem;
+    padding-bottom: 1rem;
+    text-align: center;
+}
+
+.project-name{
+    font-size: 1.3rem;
+    text-align: center;
+}
+
+#image:hover{
+    background: rgba(0, 0,0, .5);
+}
+#modal{
+    display: none;
+    position: fixed;
+    z-index: 3;
+    left: 0;
+    top: 0;
+    overflow: auto;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, .4);
+}
+#modalContent{
+    background-color: seashell;
+    margin: 10% auto;
+    width: 50%;
+    padding: 20px;
+    box-shadow: .1rem .1rem .8rem white;
+    animation-name: modalopen;
+    animation-duration: 1s;
+}
+
+#close{
+    float: right;
+    font-size: 2rem;
+    cursor: pointer;
+}
+#close:hover{
+    color: red;
+}
+
+.about{
+    height: 75vh;
+    width: 40%;
+}
+.legend-underline{
+    border-width: 30px;
+    text-decoration: underline;
+}
+/* About */
+/* contact */
+
+.purple-text{
+    color: rgb(2, 223, 223);
+}
+.send{
+    background-color: rgb(2, 223, 223);
+}
+#list{
+    font-size: 1.2rem;
+    
+}
+/* #icons{
+    background-color: rgb(2, 223, 223);
+    
+} */
+
+/* modal open keyframe */
+@keyframes modalopen{
+    from{opacity: 0;}
+    to{opacity: 1;}
+}
+
+
 @media only screen and (max-width: 600px) {
     .home-inner{
         height: 100vh;
@@ -90,67 +171,12 @@ body{
         background-size: cover;
         object-fit: cover;
     }
+    #modalContent{
+        width: 80%;
+    }
+    /* profile */
+    #profile{
+       background-color: violet;
+    }
   }
   
-/* .login , .logout:hover{
-    background-color: white;
-    border-radius: 2rem;
-    border: 2px solid white;
-    padding: 0.1rem 1.0rem;
-    color: #60b4df;
-    text-transform: uppercase;
-}
-
-.link, .login:hover{
-    background-color: transparent;
-    color: black;
-    border-radius: 2rem;
-    border: 2px solid white;
-    padding: 0.1rem 1.0rem;
-    text-transform: uppercase;
-
-}
-
-.link{
-    text-decoration: none;
-}
-
-.button{
-    background-color: #60b4df;
-    transition: 0.3s;
-    color: black;
-    border-radius: 2rem;
-    font-size: 0.9em;
-}
-.button:hover{
-    opacity: 1;
-    background-color: #607678;
-} */
-
-/* .container{
-    position: relative;
-}
-
-.image{
-    opacity: 1;
-    display: block;
-    transition: .5s ease;
-    backface-visibility: hidden;
-}
-.title{
-    position: absolute;
-    opacity: 0;
-    transition: .5s ease;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-    text-align: center;
-}
-
-.container:hover .image{
-    opacity: 0.3;
-}
-.container:hover .title{
-    opacity: 1;
-} */

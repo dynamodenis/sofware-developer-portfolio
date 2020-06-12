@@ -16,6 +16,18 @@
         <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Poppins'>
         <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+        <link rel='stylesheet' href='https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'>
+
+        <!-- MDB LIGHTBOX CDN -->
+            <!-- Font Awesome -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+        <!-- Google Fonts -->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+        <!-- Bootstrap core CSS -->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+        <!-- Material Design Bootstrap -->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.13.0/css/mdb.min.css" rel="stylesheet">
+
     {% endblock %}
 </head>
 <body data-spy="scroll" data-target="#navbarResponsive">
@@ -65,43 +77,222 @@
         </div>
     </div>
     <!-- Projects -->
-    <div id="projects">
-        
+    <div id="projects" class="offset">
+        <div class="container"> 
+            <div class="mdb-lightbox">        
+                <div class="row mt-4">
+                    <legend class="legend">PORTFOLIO</legend>
+                    <div class="legend-underline"></div>
+                    {% for project in projects%}
+                    <div class="col-lg-4 col-md-4">
+                        <div class="card w-auto view overly zoom">
+                            <a style="cursor: pointer;"><img src="{{project.image.url}}" id="image" class="card-img-top image-fluid" alt="{{project.name}}" style="height: 50vh;"></a>
+                            <div class="card-body">
+                                <p class="project-name">{{project.name}}</p>
+                                <div id="modal">
+                                    <div id="modalContent">
+                                        <p id="close">&times;</p>
+                                        {% autoescape on%}
+                                        <p>{{project.description | safe}}</p>
+                                        {% endautoescape%}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
     </div>
 
         <!-- About -->
-    <div id="about">
-
-    </div>
-
-    <div id="contact">
-
-    </div>
-        <!-- <nav class="navbar navbar-expand-sm fixed-top header">
-            <a class="navbar-brand " id='name' href="" ><span class="material-icons mr-2 mb-1" style="font-size:0.8em ;">
-                laptop_windows
-                </span>DynamoDenis</a>
-            <a href=""></a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon" ></span>
-            </button>
-            <div class="collapse navbar-collapse " id="navbarNavDropdown">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                <a class="nav-link" href="">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#projects">Projects</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#about">About</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#contact">Contact</a>
-                </li>
-            </ul>
+    <div id="about" class="offset">
+        <div class="jumbotron mt-4">
+        <div class="container-fluid">
+            <legend class="legend">ABOUT ME</legend>
+            <div class="legend-underline"></div>
+            <div class="row">
+                <div class="col-lg-2 col-md-2"></div>
+                <div class="col-lg-8 col-md-8">
+                        <div class="row">
+                            <div class="col-lg-3 col-md-3 mt-2">
+                                <img src="{{user.profile.image.url}}" class="img-circle rounded-circle image-fluid" id="profile" alt="..." style="width: 150px; height: 150px;">
+                            </div>
+                        
+                            <div class="col-lg-9 col-md-9 mb-2 " style="font-size: 0.8rem;">
+                                <h2 class="card-title">{{user.username}}</h2> <hr>
+                                <p class="card-text"><span class="label" style="font-weight: bolder;">Email Adress: </span>{{user.email}}</p>
+                                {% if user.profile.company%}
+                                <p class="card-text"><span class="label" style="font-weight: bolder;"> Location: </span>{{user.profile.company}}</p>
+                                {%endif%} 
+                                {% if user.profile.location%}
+                                <p class="card-text"><span class="label" style="font-weight: bolder;">Location: </span>{{user.profile.location}}</p>
+                                {%endif%} 
+                                {% if user.profile.contact%}
+                                <p class="card-text"><span class="label" style="font-weight: bolder;">Contact Me: </span>{{user.profile.contact}}</p>
+                                {%endif%} 
+                                {% if user.profile.bio%}
+                                <p class="card-text"><span style="font-weight: bolder;">About Me:</span> {{user.profile.bio}}</p>
+                                {%endif%} 
+                            </div>
+                        </div>
+                </div>
+                <div class="col-lg-2 col-md-2"></div>
             </div>
-        </nav> -->
+        </div>
+        </div>
+    </div>
+
+    <div id="contact" class="offset">
+        <section id="contact" class="py-5" >
+
+            <div class="container">
+
+                <!-- Section heading -->
+                <legend class="h1-responsive legend mb-5">CONTACT US</legend>
+                <!-- Section description -->
+                <p class="text-center w-responsive mx-auto mb-5">You can contact us for any question or inquiries and our team will reach you within 12 hours. Feel free to give a direct call and I will be happy to serve you..</p>
+
+                <!-- Grid row -->
+                <div class="row">
+
+                    <!-- Grid column -->
+                    <div class="col-md-9 mb-md-0 mb-5">
+
+                    <form>
+
+                        <!-- Grid row -->
+                        <div class="row">
+
+                        <!-- Grid column -->
+                        <div class="col-md-6">
+                            <div class="md-form mb-0">
+                            <input type="text" id="contact-name" class="form-control">
+                            <label for="contact-name" class="">Your name</label>
+                            </div>
+                        </div>
+                        <!-- Grid column -->
+
+                        <!-- Grid column -->
+                        <div class="col-md-6">
+                            <div class="md-form mb-0">
+                            <input type="text" id="contact-email" class="form-control">
+                            <label for="contact-email" class="">Your email</label>
+                            </div>
+                        </div>
+                        <!-- Grid column -->
+
+                        </div>
+                        <!-- Grid row -->
+
+                        <!-- Grid row -->
+                        <div class="row">
+
+                        <!-- Grid column -->
+                        <div class="col-md-12">
+                            <div class="md-form mb-0">
+                            <input type="text" id="contact-Subject" class="form-control">
+                            <label for="contact-Subject" class="">Subject</label>
+                            </div>
+                        </div>
+                        <!-- Grid column -->
+
+                        </div>
+                        <!-- Grid row -->
+
+                        <!-- Grid row -->
+                        <div class="row">
+
+                        <!-- Grid column -->
+                        <div class="col-md-12">
+                            <div class="md-form">
+                            <textarea type="text" id="contact-message" class="form-control md-textarea" rows="3"></textarea>
+                            <label for="contact-message">Your message</label>
+                            </div>
+                        </div>
+                        <!-- Grid column -->
+
+                        </div>
+                        <!-- Grid row -->
+
+                    </form>
+
+                    <div class="text-center text-md-left">
+                        <button type="submit" class="btn btn-md send">Send</button>
+                    </div>
+
+                    </div>
+                    <!-- Grid column -->
+
+                    <!-- Grid column -->
+                    <div class="col-md-3 text-center">
+                    <ul class="list-unstyled mb-0">
+                        <li>
+                        <i class="fa fa-map-marker fa-2x purple-text"></i>
+                        <p>Nairobi, Kenya</p>
+                        </li>
+                        <li>
+                        <i class="fa fa-phone fa-2x mt-4 purple-text"></i>
+                        <p>+254758818394</p>
+                        </li>
+                        <li>
+                        <i class="fa fa-envelope fa-2x mt-4 purple-text"></i>
+                        <p class="mb-0">dmbugu66@gmail.com</p>
+                        </li>
+                    </ul>
+                    </div>
+                    <!-- Grid column -->
+
+                </div>
+                <!-- Grid row -->
+
+            </div>
+
+        </section>
+        <!--Section: contact-->
+    </div>
+    <footer class="page-footer font-small pt-4 footer" style="background-color: rgba(0,0, 0,.8);">
+
+        <!-- Footer Elements -->
+        <div class="container">
+    
+        <!-- Social buttons -->
+        <ul class="list-unstyled list-inline text-center " id="list">
+            <li class="list-inline-item" id="icons">
+            <a  href="https://www.twitter.com" title="TWITTER" target="_blank">
+                <i class="fab fa-twitter" aria-hidden="true"></i>
+            </a>
+            </li>
+            <li class="list-inline-item" id="icons">
+            <a href="https://www.instagram.com" title="INSTAGRAM" target="_blank">
+                <i class="fab fa-instagram" aria-hidden="true"></i>
+            </a>
+            </li>
+            <li class="list-inline-item" id="icons">
+            <a href="https://www.facebook.com" target="_blank" title="FACEBOOK">
+                <i class="fab fa-facebook" aria-hidden="true"></i>
+            </a>
+            </li>
+            <li class="list-inline-item rounded-circle" id="icons">
+            <a href="https://www.linkedin.com" target="_blank" title="LINKEDIN" class="rounded-circle">
+                <i class="fab fa-linkedin" aria-hidden="true"></i>
+            </a>
+            </li>
+        </ul>
+        <!-- Social buttons -->
+    
+        </div>
+        <!-- Footer Elements -->
+    
+        <!-- Copyright -->
+        <div class="footer-copyright text-center py-3" style="color: white;">© 2020 Copyright
+        
+        </div>
+        <!-- Copyright -->
+        
+      </footer>
+      <!-- Footer -->
     <div class="text-center">
         {% if messages %}
             {% for message in messages%}
@@ -112,7 +303,12 @@
     {% block content%}
     {% endblock %}
     {% block scripts %}
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script type='text/javascript' src="{%static 'js/style.js' %}"></script>
+        <!-- MBD LIGHTBOX -->
+        <!-- JQuery -->
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <!-- Bootstrap tooltips -->
+        <!-- MDB core JavaScript -->
     {% bootstrap_javascript%}
     {% endblock %}
 </body>
