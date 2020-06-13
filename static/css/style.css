@@ -28,7 +28,7 @@ body{
 
 .navbar-dark .navbar-nav .nav-link.active,
 .navbar-dark .navbar-nav .nav-link:hover{
-    color: rgb(2, 223, 223);
+    color: rgb(66, 155, 155);
 }
 .header a{
     color: rgb(248, 245, 245);
@@ -111,6 +111,7 @@ body{
     height: 100%;
     width: 100%;
     background-color: rgba(0, 0, 0, .4);
+    
 }
 #modalContent{
     background-color: seashell;
@@ -120,20 +121,25 @@ body{
     box-shadow: .1rem .1rem .8rem white;
     animation-name: modalopen;
     animation-duration: 1s;
+    
 }
 
 #close{
     float: right;
     font-size: 2rem;
     cursor: pointer;
+    
 }
 #close:hover{
     color: red;
 }
 
-.about{
-    height: 75vh;
-    width: 40%;
+.site:hover{
+    background-color: rgb(66, 155, 155);
+}
+
+#about{
+    background-color: rgb(195, 195, 199);
 }
 .legend-underline{
     border-width: 30px;
@@ -142,7 +148,7 @@ body{
 /* About */
 /* contact */
 
-.purple-text{
+#purple-text{
     color: rgb(2, 223, 223);
 }
 .send{
@@ -162,6 +168,7 @@ body{
     from{opacity: 0;}
     to{opacity: 1;}
 }
+
 
 
 @media only screen and (max-width: 600px) {

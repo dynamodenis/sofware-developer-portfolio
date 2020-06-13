@@ -44,3 +44,12 @@ class Profile(models.Model):
             size=(300,300)
             img.thumbnail(size)
             img.save(self.image.path)
+            
+class Inquiry(models.Model):
+    your_name=models.CharField(max_length=40)
+    your_email=models.EmailField()
+    subject=models.CharField(max_length=100)
+    your_message=models.TextField()
+    
+    def __str__(self):
+        return self.subject

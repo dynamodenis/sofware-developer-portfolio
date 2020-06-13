@@ -5,7 +5,10 @@ from django.conf.urls.static import static
 
 app_name='portfolio'
 urlpatterns = [
+    #index function
     path('', views.index, name='index'),
+    #ajax functon
+    path('ajax/inquiry/', views.inquiry, name='inquiry'),
     path('project/<int:project_id>', views.project, name='project'),
 ]
 if settings.DEBUG:

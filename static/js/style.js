@@ -1,5 +1,33 @@
+// AJAX REQUEST
+$(document).ready(function(){
+    $('form').submit(function(event){
+        event.preventDefault()
+        form=$('form')
+        $.ajax({
+            'url':'/ajax/inquiry/',
+            'type':'POST',
+            'data':form.serialize(),
+            'dataType':'json',
+            'success':function(data){
+                Swal.fire(
+                    '',
+                    data['success'],
+                    'success'
+                  )
+            }
+        })//End of ajax function
+        $('#id_your_name').val('')
+        $('#id_your_email').val('')
+        $('#id_subject').val('')
+        $('#id_your_message').val('')
+
+    }) //End of submit event
+})
+
+
+
 // get image id
-var image=document.getElementById('image');
+var image=document.getElementsByClassName('image');
 // get the modal
 var modal=document.getElementById('modal');
 // get model conetent
@@ -8,13 +36,17 @@ var modalContent=document.getElementById('modalContent')
 var close=document.getElementById('close')
 
 // image click event
-image.addEventListener('click', openModal);
 
-function openModal(){
-    modal.style.display='block';
+for(i=0;i<image.length;i++){
+    var description=document.getElementById('description')
+
+    image.item(i).onclick=function(){
+        modal.style.display='block';
+        description.innerHTML=this.alt;
+        console.log(123)
+    }
 }
 
-// close modal
 close.addEventListener('click',closeModal);
 
 function closeModal(){
@@ -32,14 +64,3 @@ function clickOutside(e){
 }
 
 
-// section animation
- // MDB Lightbox Init
- $(function () {
-    $("#mdb-lightbox-ui").load("mdb-addons/mdb-lightbox-ui.html");
-});
-
-// Adding animations to the sections
-$("section").addClass("wow fadeIn");
-
-// Animations Init
-new WOW().init();
