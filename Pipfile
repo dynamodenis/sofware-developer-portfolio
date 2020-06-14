@@ -14,8 +14,8 @@ dj-database-url = "*"
 psycopg2 = "*"
 django-tinymce = "*"
 django-heroku = "*"
-gunicorn = "*"
 whitenoise = "*"
+gunicorn = "*"
 
 [requires]
 python_version = "3.6"
