@@ -10,7 +10,7 @@ from django.contrib import messages
 # Create your views here.
 def index(request):
     projects=Project.objects.order_by('-posted')
-    user=User.objects.get(pk=request.user.id)
+    user=User.objects.get(pk=1)
     form=InquiryForm()
     # if request.method=='POST':
     #     form=InquiryForm(request.POST)
