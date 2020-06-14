@@ -172,11 +172,9 @@
     }
     #modalContent{
         width: 80%;
-        margin: 30% auto;
+        margin: 30%;
     }
     /* profile */
-    #profile{
-       background-color: violet;
-    }
+
   }
   
