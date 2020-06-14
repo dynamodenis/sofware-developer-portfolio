@@ -13,6 +13,9 @@ django-decouple = "*"
 dj-database-url = "*"
 psycopg2 = "*"
 django-tinymce = "*"
+django-heroku = "*"
+gunicorn = "*"
+whitenoise = "*"
 
 [requires]
 python_version = "3.6"

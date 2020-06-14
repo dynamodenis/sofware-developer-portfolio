@@ -30,12 +30,11 @@
 
     {% endblock %}
 </head>
-<body data-spy="scroll" data-target="#navbarResponsive">
+<body data-spy="scroll" data-target="#navbarResponsive" id="body">
     <div id="home">
-        <nav class="navbar navbar-expand-sm navbar-dark bg-dark fixed-top">
-            <a class="navbar-brand " id='name' href="" ><span class="material-icons mr-2 mb-1" style="font-size:0.8em ;">
-                laptop_windows
-                </span>DynamoDenis</a>
+        <nav class="navbar navbar-expand-sm navbar-dark bg-dark fixed-top" id="navbar">
+            <a class="navbar-brand " id='name' href="" ><i class="fas fa-fist-raised"></i>
+                DynamoDenis</a>
             <a href=""></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -43,16 +42,16 @@
             <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                <a class="nav-link" href="#home">Home</a>
+                <a class="nav-link" href="#home" id="nav">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#projects">Projects</a>
+                    <a class="nav-link" href="#projects" id="nav">Projects</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#about">About</a>
+                    <a class="nav-link" href="#about" id="nav">About</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#contact">Contact</a>
+                    <a class="nav-link" href="#contact" id="nav">Contact</a>
                 </li>
             </ul>
             </div>
@@ -80,8 +79,8 @@
         <div class="caption text-center">
             <h1>Welcome</h1>
             <h3>Am Dynamo Denis</h3>
-            <h5><span>A Web Developer</span><span>Software Developer</span></h5>
-            <a href="#projects" class="btn btn-outline-light btn-lg">Get Started</a>
+            <h5><i class="fas fa-hand-point-right" style="color: rgb(2, 223, 223);"></i><span>A Web Developer</span><i class="fas fa-hand-point-right" style="color: rgb(2, 223, 223);"></i><span>Software Developer</span><i class="fas fa-hand-point-right" style="color: rgb(2, 223, 223);"></i><span>Dreamer</span></h5>
+            <a href="#about" class="btn btn-outline-light btn-md">Get Started</a>
             <h4></h4>
         </div>
         <div class="dark">
@@ -139,19 +138,27 @@
                 <div class="col-lg-2 col-md-2"></div>
                 <div class="col-lg-8 col-md-8 text-center">
                     <h2 class="card-title">DYNAMO DENIS MBUGUA</h2> <hr>
-                    <p class="card-text"><span class="label" style="font-weight: bolder;">Email Adress: </span>{{user.email}}</p>
+                    <p class="card-text"><span class="label" id="about-info" style="font-weight: bolder;">Email Adress: </span>{{user.email}}</p>
                     {% if user.profile.company%}
-                    <p class="card-text"><span class="label" style="font-weight: bolder;"> Location: </span>{{user.profile.company}}</p>
+                    <p class="card-text"><span class="label" id="about-info"> Location: </span>{{user.profile.company}}</p>
                     {%endif%} 
                     {% if user.profile.location%}
-                    <p class="card-text"><span class="label" style="font-weight: bolder;">Location: </span>{{user.profile.location}}</p>
+                    <p class="card-text"><span class="label" id="about-info">Location: </span>{{user.profile.location}}</p>
                     {%endif%} 
                     {% if user.profile.contact%}
-                    <p class="card-text"><span class="label" style="font-weight: bolder;">Contact Me: </span>{{user.profile.contact}}</p>
+                    <p class="card-text"><span class="label" id="about-info">Contact Me: </span>{{user.profile.contact}}</p>
                     {%endif%} 
                     {% if user.profile.bio%}
-                    <p class="card-text"><span style="font-weight: bolder;">About Me:</span> {{user.profile.bio}}</p>
-                    {%endif%}                
+                    <p class="card-text"><span id="about-info">About Me:</span> {{user.profile.bio}}</p>
+                    {%endif%}
+                    <p>
+                        <i class="fab fa-html5" style="font-size:48px;color:red"></i>
+                        <i class="fab fa-css3" style="font-size:48px;color:red"></i>
+                        <i class="fab fa-python" style="font-size:48px;color:black"></i>
+                        <i class="fab fa-bootstrap" style="font-size:48px;color:rgb(0, 0, rgb(43, 43, 161))"></i>
+                        <i class="fab fa-js" style="font-size:48px;color:rgba(6, 6, 201, 0.7)"></i>
+                        <i class="fab fa-angular" style="font-size:48px;color:rgba(0, 0, 0,0.7)"></i>
+                    </p>                
                 </div>
                 <div class="col-lg-2 col-md-2"></div>
             </div>
@@ -179,7 +186,7 @@
                         {% csrf_token%}
                         {% bootstrap_form form%}
 
-                        <input type="submit" value="Send" class="btn btn-md send">
+                        <input type="submit" value="Send" class="btn btn-md" id="send">
                     </form>
                     </div>
                     <!-- Grid column -->
@@ -192,11 +199,11 @@
                         <p>Nairobi, Kenya</p>
                         </li>
                         <li>
-                        <i class="fa fa-phone fa-2x mt-4 purple-text"></i>
+                        <i class="fa fa-phone fa-2x mt-4" id="purple-text"></i>
                         <p>+254758818394</p>
                         </li>
                         <li>
-                        <i class="fa fa-envelope fa-2x mt-4 purple-text"></i>
+                        <i class="fa fa-envelope fa-2x mt-4" id="purple-text"></i>
                         <p class="mb-0">dmbugu66@gmail.com</p>
                         </li>
                     </ul>
@@ -211,7 +218,7 @@
         </section>
         <!--Section: contact-->
     </div>
-    <footer class="page-footer font-small pt-4 footer" style="background-color: rgba(0,0, 0,.8);">
+    <footer class="page-footer font-small pt-4 footer" style="background-color: rgba(0,0, 0,.6);">
 
         <!-- Footer Elements -->
         <div class="container">
@@ -219,22 +226,22 @@
         <!-- Social buttons -->
         <ul class="list-unstyled list-inline text-center " id="list">
             <li class="list-inline-item" id="icons">
-            <a  href="https://www.twitter.com" title="TWITTER" target="_blank">
+            <a  href="https://www.twitter.com" title="TWITTER" target="_blank" style="font-size: 1.5rem;color:white;">
                 <i class="fab fa-twitter" aria-hidden="true"></i>
             </a>
             </li>
             <li class="list-inline-item" id="icons">
-            <a href="https://www.instagram.com" title="INSTAGRAM" target="_blank">
+            <a href="https://www.instagram.com" title="INSTAGRAM" target="_blank" style="font-size: 1.5rem;color:red;">
                 <i class="fab fa-instagram" aria-hidden="true"></i>
             </a>
             </li>
             <li class="list-inline-item" id="icons">
-            <a href="https://www.facebook.com" target="_blank" title="FACEBOOK">
+            <a href="https://www.facebook.com" target="_blank" title="FACEBOOK" style="font-size: 1.5rem;color:rgb(32, 129, 226);">
                 <i class="fab fa-facebook" aria-hidden="true"></i>
             </a>
             </li>
             <li class="list-inline-item rounded-circle" id="icons">
-            <a href="https://www.linkedin.com" target="_blank" title="LINKEDIN" class="rounded-circle">
+            <a href="https://www.linkedin.com" target="_blank" title="LINKEDIN" class="rounded-circle" style="font-size: 1.5rem;color:rgb(10, 68, 126);">
                 <i class="fab fa-linkedin" aria-hidden="true"></i>
             </a>
             </li>

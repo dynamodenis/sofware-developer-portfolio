@@ -1,5 +1,5 @@
 
-body{
+#body{
     font-family: 'Poppins',serif;
 }
 #name{
@@ -8,11 +8,7 @@ body{
     text-shadow: 4px 4px 4px #aaa;
 }
 
-.header{
-    background-color: #60b4df;
-    
-}
-.navbar{
+#navbar{
     text-transform: uppercase;
     background-color: rgba(0,0, 0,.6)!important;
 
@@ -30,8 +26,8 @@ body{
 .navbar-dark .navbar-nav .nav-link:hover{
     color: rgb(66, 155, 155);
 }
-.header a{
-    color: rgb(248, 245, 245);
+#nav:hover, #nav.active{
+    color: rgb(66, 155, 155);
 }
 
 /* Background image home */
@@ -151,17 +147,13 @@ body{
 #purple-text{
     color: rgb(2, 223, 223);
 }
-.send{
+#send{
     background-color: rgb(2, 223, 223);
 }
-#list{
-    font-size: 1.2rem;
-    
+
+#about-info{
+    font-weight: bolder;
 }
-/* #icons{
-    background-color: rgb(2, 223, 223);
-    
-} */
 
 /* modal open keyframe */
 @keyframes modalopen{
