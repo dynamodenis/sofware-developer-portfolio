@@ -163,7 +163,7 @@
 
 
 
-@media only screen and (min-width: 720px) {
+@media only screen and (max-width: 600px) {
     .home-inner{
         height: 100vh;
         width: 100%;
@@ -172,7 +172,7 @@
     }
     #modalContent{
         width: 80%;
-        margin: 30%;
+        margin-top: 30%;
     }
     /* profile */
 
