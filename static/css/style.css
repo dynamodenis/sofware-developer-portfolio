@@ -174,7 +174,10 @@
         width: 80%;
         margin-top: 30%;
     }
-    /* profile */
+    
+    #site{
+        background-color:  rgb(2, 223, 223);
+    }
 
   }
   

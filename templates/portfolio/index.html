@@ -97,10 +97,10 @@
                     {% for project in projects%}
                     <div class="col-lg-4 col-md-4">
                         <div class="card w-auto view overly zoom">
-                            <a style="cursor: pointer;"><img src="{{project.image.url}}" class="image" class="card-img-top image-fluid" alt="{{project.description}}" style="height: 50vh; width: 100%;"></a>
+                            <a style="cursor: pointer;"><img src="{{project.image.url}}" class="image" class="card-img-top image-fluid" alt="{{project.description}}" style="height: 40vh; width: 100%;"></a>
                             <div class="card-body">
                                 <p class="project-name">{{project.name}}</p>
-                                <p><a href="{{project.link}}" target="_blank" class="btn d-block site">Visit Site</a></p>
+                                <p><a href="{{project.link}}" target="_blank" class="btn d-block site" id="site">Visit Site</a></p>
                                 <div id="modal">
                                     <div id="modalContent">
                                         <p id="close">&times;</p>
@@ -110,14 +110,14 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div> <br>
                     </div>
 
                     <!--  -->
                       
                     {% endfor %}
                 </div>
-            </div>
+            </div> 
         </div>
     </div>
 
