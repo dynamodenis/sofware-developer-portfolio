@@ -16,6 +16,7 @@ django-tinymce = "*"
 django-heroku = "*"
 whitenoise = "*"
 gunicorn = "*"
+python-decouple = "*"
 
 [requires]
 python_version = "3.6"
