@@ -2,6 +2,18 @@
 #body{
     font-family: 'Poppins',serif;
 }
+/* scroll bar */
+#body::-webkit-scrollbar{
+    width: 0.25rem;
+}
+#body::-webkit-scrollbar-thumb{
+    background-color: rgb(66, 155, 155);
+}
+#body::-webkit-scrollbar-track{
+    background-color: black;
+}
+
+
 #name{
     font-family: 'Poppins',serif;
     font-size: 1.5rem;
