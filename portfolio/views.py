@@ -4,6 +4,8 @@ from .models import Project,Inquiry
 from django.contrib.auth.models import User
 from .forms import InquiryForm
 from django.contrib import messages
+from .email import send_inquiry
+from django.core.mail import send_mail
 
 
 
@@ -26,6 +28,27 @@ def index(request):
 
 #ajax inquiry view functon
 def inquiry(request):
+    name=request.POST.get('your_name')
+    print(name)
+    message=request.POST.get('your_message')
+    print(message)
+    client=request.POST.get('your_email')
+    print(client)
+    subject=request.POST.get('subject')
+    print(subject)
+    
+    send_inquiry(subject=subject,name=name,message=message,client=client)
+    
+    # send_mail(
+    #     subject,
+    #     message,
+    #     client,
+    #     ['dmbugua66@gmail.com'],
+    #     fail_silently=False,
+    # )
+
+
+    
     message=InquiryForm(request.POST)
     message.save()
     data={'success':'Your inquiry has been received, your request will be processed as soon as possible. Thank You!'}

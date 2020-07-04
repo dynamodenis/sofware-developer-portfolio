@@ -1,9 +1,13 @@
 from django.db import models
-from django.contrib.auth.models import User
+from django.contrib.auth.models import User,AbstractUser
 from tinymce.models import HTMLField
 from PIL import Image
 
 # Create your models here.
+
+# class User(AbstractUser):
+#     is_client=models.BooleanField(default=False,blank=True)
+    
 class Project(models.Model):
     user=models.ForeignKey(User, on_delete=models.CASCADE)
     image=models.ImageField(upload_to='project/' ,blank=True)
