@@ -6,6 +6,7 @@ from .forms import InquiryForm
 from django.contrib import messages
 from .email import send_inquiry
 from django.core.mail import send_mail
+from django.conf import settings
 
 
 
@@ -37,7 +38,7 @@ def inquiry(request):
     subject=request.POST.get('subject')
     print(subject)
     
-    send_inquiry(subject=subject,name=name,message=message,client=client)
+    send_inquiry(subject=subject,name=name,message=message,client=client,myaccount=settings.EMAIL_HOST_USER)
     
     # send_mail(
     #     subject,
