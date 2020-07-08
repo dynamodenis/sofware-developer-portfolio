@@ -38,21 +38,13 @@ def inquiry(request):
     subject=request.POST.get('subject')
     print(subject)
     
-    send_inquiry(subject=subject,name=name,message=message,client=client,myaccount=settings.EMAIL_HOST_USER)
+    # send_inquiry(subject=subject,name=name,message=message,client=client,myaccount=settings.EMAIL_HOST_USER)
     
-    # send_mail(
-    #     subject,
-    #     message,
-    #     client,
-    #     ['dmbugua66@gmail.com'],
-    #     fail_silently=False,
-    # )
-
 
     
     message=InquiryForm(request.POST)
     message.save()
-    data={'success':'Your inquiry has been received, your request will be processed as soon as possible. Thank You!'}
+    data={'success':'{}, Your inquiry has been received, your request will be processed as soon as possible. Thank You!'.format(name)}
     return JsonResponse(data)
 
 
