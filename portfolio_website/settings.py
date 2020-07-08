@@ -24,7 +24,7 @@ EMAIL_HOST=config('EMAIL_HOST')
 EMAIL_PORT=config('EMAIL_PORT')
 EMAIL_HOST_USER = config('EMAIL_HOST_USER')
 EMAIL_HOST_PASSWORD =  config('EMAIL_HOST_PASSWORD')
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
