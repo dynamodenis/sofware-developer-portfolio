@@ -173,8 +173,6 @@
     animation-duration: 2s;
     animation-iteration-count: infinite;
     animation-timing-function: linear; */
-    font-size: 330px;
-    background-color: green;
     -webkit-animation:spin 4s linear infinite;
     -moz-animation:spin 4s linear infinite;
     animation:spin 4s linear infinite;
@@ -215,7 +213,7 @@
     #site{
         background-color:  rgb(2, 223, 223);
     }
-    #icons{
+    #logos{
         font-size: 30px;
     }
 
