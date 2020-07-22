@@ -165,6 +165,19 @@
 
 #about-info{
     font-weight: bolder;
+    color: rgb(0, 0, 0);
+}
+
+#logos{
+    /* animation-name: logo-spin;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear; */
+    font-size: 330px;
+    background-color: green;
+    -webkit-animation:spin 4s linear infinite;
+    -moz-animation:spin 4s linear infinite;
+    animation:spin 4s linear infinite;
 }
 
 /* modal open keyframe */
@@ -173,6 +186,17 @@
     to{opacity: 1;}
 }
 
+@-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
+@-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
+@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
+/* @keyframes logo-spin{
+    from {
+        transform: rotate(0deg);
+        }
+    to {
+        transform: rotate(360deg);
+        }
+} */
 
 
 @media only screen and (max-width: 600px) {
@@ -190,6 +214,9 @@
     
     #site{
         background-color:  rgb(2, 223, 223);
+    }
+    #icons{
+        font-size: 30px;
     }
 
   }

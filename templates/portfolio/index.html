@@ -5,13 +5,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/favicon.ico" type="image/gif" sizes="16x16">
+    <link rel="icon" href="/favicon.ico" />
     {% if title%}
     <title>DynamoDenis | {{title}}</title>
     {% else %}
     <title>DynamoDenis</title>
+    <!-- <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon"> -->
     {% endif%}
     {% block styles %}
         {% bootstrap_css %}
+        
         <link rel="stylesheet" href="{%static 'css/style.css'%}"  >
         <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Poppins'>
         <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
@@ -28,7 +32,10 @@
         <!-- Material Design Bootstrap -->
         <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.13.0/css/mdb.min.css" rel="stylesheet">
 
+        <!-- FAVICON -->
+        
     {% endblock %}
+    
 </head>
 <body data-spy="scroll" data-target="#navbarResponsive" id="body">
     <div id="home">
@@ -93,6 +100,11 @@
             <div class="mdb-lightbox">        
                 <div class="row mt-4">
                     <legend class="legend">PORTFOLIO</legend>
+                    <p class="text-center w-responsive mx-auto mb-5">The most exciting moments in software developemnt is bring ideas to life. The moment you realise you can
+                        change the world by writing code and the only thing you need is just a working computer. On this exciting journey of software development I have worked on
+                        multiple projects both personal and professional. Due to the confidentiality agreements with clients I cannot display them here but below is a sample of some 
+                        of my personal projects I have worked on.
+                    </p>
                     <div class="legend-underline"></div>
                     {% for project in projects%}
                     <div class="col-lg-4 col-md-4">
@@ -138,26 +150,28 @@
                 <div class="col-lg-2 col-md-2"></div>
                 <div class="col-lg-8 col-md-8 text-center">
                     <h2 class="card-title">DYNAMO DENIS MBUGUA</h2> <hr>
-                    <p class="card-text"><span class="label" id="about-info" style="font-weight: bolder;">Email Adress: </span>{{user.email}}</p>
+                    <p class="card-text"><span class="label" id="about-info" style="font-weight: bolder;color: rgb(0, 0, 0);">Email Adress: </span>{{user.email}}</p>
                     {% if user.profile.company%}
-                    <p class="card-text"><span class="label" id="about-info"> Location: </span>{{user.profile.company}}</p>
+                    <p class="card-text"><span class="label" id="about-info" style="font-weight: bolder;color: rgb(0, 0, 0);"> Company: </span>{{user.profile.company}}</p>
                     {%endif%} 
                     {% if user.profile.location%}
-                    <p class="card-text"><span class="label" id="about-info">Location: </span>{{user.profile.location}}</p>
+                    <p class="card-text"><span class="label" id="about-info" style="font-weight: bolder;color: rgb(0, 0, 0);">Location: </span>{{user.profile.location}}</p>
                     {%endif%} 
                     {% if user.profile.contact%}
-                    <p class="card-text"><span class="label" id="about-info">Contact Me: </span>{{user.profile.contact}}</p>
+                    <p class="card-text"><span class="label" id="about-info" style="font-weight: bolder;color: rgb(0, 0, 0);">Contact Me: </span>{{user.profile.contact}}</p>
                     {%endif%} 
                     {% if user.profile.bio%}
-                    <p class="card-text"><span id="about-info">About Me:</span> {{user.profile.bio}}</p>
+                    <p class="card-text"><span id="about-info" style="font-weight: bolder;color: rgb(0, 0, 0);">About Me:</span> {{user.profile.bio}}</p>
                     {%endif%}
-                    <p>
-                        <i class="fab fa-html5" style="font-size:48px;color:red"></i>
+                    <p id="icons">
+                        <i class="fab fa-html5 "  style="font-size:48px;color:red"></i>
                         <i class="fab fa-css3" style="font-size:48px;color:red"></i>
                         <i class="fab fa-python" style="font-size:48px;color:black"></i>
-                        <i class="fab fa-bootstrap" style="font-size:48px;color:rgb(0, 0, rgb(43, 43, 161))"></i>
-                        <i class="fab fa-js" style="font-size:48px;color:rgba(6, 6, 201, 0.7)"></i>
+                        <i class="fab fa-bootstrap" style="font-size:48px;color:rgb(43, 43, 161)"></i>
+                        <i class="fab fa-js" style="font-size:48px;color:rgba(237, 240, 51, 0.7)"></i>
                         <i class="fab fa-angular" style="font-size:48px;color:rgba(0, 0, 0,0.7)"></i>
+                        <i class="fab fa-react" id="logos" style="font-size:48px;color:rgba(6, 100, 201, 0.7)"></i>
+
                     </p>                
                 </div>
                 <div class="col-lg-2 col-md-2"></div>
