@@ -194,8 +194,6 @@ TypeWriter.prototype.type = function(){
         typeSpeed=500;
     }
 
-    
-    console.log(this.txt)
 
     setTimeout(()=>this.type(),typeSpeed)
 }
