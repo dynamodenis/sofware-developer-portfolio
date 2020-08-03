@@ -64,3 +64,73 @@ function clickOutside(e){
 }
 
 
+// // Welcome animation
+
+const text=document.querySelector('.fancy');
+const strText=text.textContent
+const splitText=strText.split('')
+
+text.textContent=''
+for(let i=0;i<splitText.length;i++){
+    text.innerHTML+=`<span>${splitText[i]}</span>`
+}
+
+let char=0;
+let timing = setInterval(onTick,50)
+
+function onTick(){
+    const span = text.querySelectorAll('span')[char];
+    span.classList.add('animate')
+    char++
+
+    if(char==splitText.length){
+        complete()
+        return;
+    }
+}
+
+function complete(){
+    clearInterval(timing)
+    timing=null
+}
+
+// Name animation
+const name=document.querySelector('.name');
+const nameText=name.textContent
+const nameSplit=nameText.split('')
+console.log(nameSplit)
+
+name.textContent=''
+for(let i=0;i<nameSplit.length;i++){
+    name.innerHTML+=`<span class="nameSpan">${nameSplit[i]}</span>`
+}
+
+let nameChar=0;
+let nameTimer = setInterval(onTick,50)
+
+function onTick(){
+    const nameSpan = name.querySelectorAll('span')[nameChar];
+    nameSpan.classList.add('animate')
+    nameChar++
+
+    if(nameChar==nameSplit.length){
+        complete()
+        return;
+    }
+}
+
+function complete(){
+    clearInterval(nameTimer)
+    nameTimer=null
+}
+
+// THE MY DETAILS IN THE LANDING PAGE SCREEN
+function initialSetup() {
+    if (document.getElementById("nameDetail") != null) {
+      setTimeout(function() {
+        document.getElementById('nameDetail').style.display = 'block';
+      }, 2000);
+    }
+  }
+  
+  initialSetup();

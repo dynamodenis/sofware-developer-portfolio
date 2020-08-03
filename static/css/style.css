@@ -91,6 +91,10 @@
     left: 0;
 }
 
+#nameDetail{
+    display: none;
+}
+
 /* PROJECT PORTFOLIO */
 .legend{
     font-size: 2rem;
@@ -169,15 +173,28 @@
 }
 
 #logos{
-    /* animation-name: logo-spin;
-    animation-duration: 2s;
-    animation-iteration-count: infinite;
-    animation-timing-function: linear; */
+    
     -webkit-animation:spin 4s linear infinite;
     -moz-animation:spin 4s linear infinite;
     animation:spin 4s linear infinite;
 }
 
+/* Name animate */
+
+.fancy span{
+    opacity: 0;
+    transition: all 0.5s ease-in;
+}
+
+/* Name */
+.name span{
+    opacity: 0;
+    transition: all 0.5s ease-in;
+}
+
+span.animate{
+    opacity: 1;
+}
 /* modal open keyframe */
 @keyframes modalopen{
     from{opacity: 0;}
@@ -187,14 +204,6 @@
 @-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
 @-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
 @keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
-/* @keyframes logo-spin{
-    from {
-        transform: rotate(0deg);
-        }
-    to {
-        transform: rotate(360deg);
-        }
-} */
 
 
 @media only screen and (max-width: 600px) {
