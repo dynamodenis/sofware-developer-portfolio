@@ -24,7 +24,7 @@ $(document).ready(function(){
     }) //End of submit event
 })
 
-
+// ----------------------------------------------------------PROJECT DETAIL MODAL-----------------------------------
 
 // get image id
 var image=document.getElementsByClassName('image');
@@ -63,6 +63,7 @@ function clickOutside(e){
     }
 }
 
+// --------------------------------------------------------WELCOME ANIMATION ON THE LANDING BACKGROUND IMAGE----------------------------------
 
 // // Welcome animation
 
@@ -94,43 +95,122 @@ function complete(){
     timing=null
 }
 
-// Name animation
-const name=document.querySelector('.name');
-const nameText=name.textContent
-const nameSplit=nameText.split('')
-console.log(nameSplit)
+// // Name animation
+// const name=document.querySelector('.name');
+// const nameText=name.textContent
+// const nameSplit=nameText.split('')
+// console.log(nameSplit)
 
-name.textContent=''
-for(let i=0;i<nameSplit.length;i++){
-    name.innerHTML+=`<span class="nameSpan">${nameSplit[i]}</span>`
-}
+// name.textContent=''
+// for(let i=0;i<nameSplit.length;i++){
+//     name.innerHTML+=`<span class="nameSpan">${nameSplit[i]}</span>`
+// }
 
-let nameChar=0;
-let nameTimer = setInterval(onTick,50)
+// let nameChar=0;
+// let nameTimer = setInterval(onTick,50)
 
-function onTick(){
-    const nameSpan = name.querySelectorAll('span')[nameChar];
-    nameSpan.classList.add('animate')
-    nameChar++
+// function onTick(){
+//     const nameSpan = name.querySelectorAll('span')[nameChar];
+//     nameSpan.classList.add('animate')
+//     nameChar++
 
-    if(nameChar==nameSplit.length){
-        complete()
-        return;
-    }
-}
+//     if(nameChar==nameSplit.length){
+//         complete()
+//         return;
+//     }
+// }
 
-function complete(){
-    clearInterval(nameTimer)
-    nameTimer=null
-}
+// function complete(){
+//     clearInterval(nameTimer)
+//     nameTimer=null
+// }
 
 // THE MY DETAILS IN THE LANDING PAGE SCREEN
 function initialSetup() {
-    if (document.getElementById("nameDetail") != null) {
-      setTimeout(function() {
-        document.getElementById('nameDetail').style.display = 'block';
-      }, 2000);
-    }
+    setTimeout(function() {
+     document.getElementById('nameDetail').style.display = 'block';
+    }, 2000);
   }
   
-  initialSetup();
+initialSetup();
+
+// function getStarted() {
+//     setTimeout(function() {
+//     document.getElementById('getStarted').style.display = '';
+//     }, 2000);
+// }
+
+// getStarted();
+
+// ----------------------------------------------TYPEWRITER--------------------------------------------------------
+
+// THIS IS THE CONSTRUCTOR FOR THE TYPEWRITER
+
+const TypeWriter= function(txtElement,words,wait=300){
+    this.txtElement=txtElement;
+    this.words=words;
+    this.txt='';
+    this.wordIndex=0;
+    this.type();
+    this.wait=parseInt(wait,10);
+    this.isDeleting=false;
+}
+
+// Type method type()
+TypeWriter.prototype.type = function(){
+    // current word
+    const current = this.wordIndex % this.words.length
+    const fullText = this.words[current]
+   
+    // check if deleting
+    if(this.isDeleting){
+        // Delete string
+        this.txt = fullText.substring(0,this.txt.length-1)
+    }else{
+        // Add string
+        this.txt = fullText.substring(0,this.txt.length+1)
+    }
+
+    // Dispaly name in the DOM
+    this.txtElement.innerHTML=`<span class='my-name'>${this.txt}</span>`
+
+    // set the deletng time to faster
+    let typeSpeed=300;
+    if(this.isDeleting){
+        typeSpeed /=2;
+    }
+
+    if(!this.isDeleting && this.txt == fullText){
+        typeSpeed=this.wait;
+        this.isDeleting=true;
+    }else if(this.isDeleting && this.txt == ''){
+        // set is deleting to false
+        this.isDeleting=false
+
+        // chage to the next word
+        this.wordIndex ++;
+
+        // wait for a half second then start typing
+        typeSpeed=500;
+    }
+
+    
+    console.log(this.txt)
+
+    setTimeout(()=>this.type(),typeSpeed)
+}
+
+
+// Init The DOM Load
+
+document.addEventListener('DOMContentLoaded', init);
+// init function
+function init(){
+    const txtElement=document.querySelector('.text-name');
+    const words= JSON.parse(txtElement.getAttribute('data-words'));
+    const wait = txtElement.getAttribute('data-wait');
+
+    new TypeWriter(txtElement,words,wait)
+}
+
+

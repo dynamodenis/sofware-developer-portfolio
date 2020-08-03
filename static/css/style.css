@@ -91,9 +91,7 @@
     left: 0;
 }
 
-#nameDetail{
-    display: none;
-}
+
 
 /* PROJECT PORTFOLIO */
 .legend{
@@ -186,15 +184,28 @@
     transition: all 0.5s ease-in;
 }
 
-/* Name */
-.name span{
+/* Name cursor when writing or deleting */
+
+.my-name{
+    border-right: 0.2rem solid #777;
+}
+/* .name span{
     opacity: 0;
     transition: all 0.5s ease-in;
-}
+} */
 
 span.animate{
     opacity: 1;
 }
+
+/* Aimates the details in the background photo */
+#nameDetail{
+    display: none;
+}
+/* Animates The Get Strted Button */
+/* #getStarted{
+    display: none;
+} */
 /* modal open keyframe */
 @keyframes modalopen{
     from{opacity: 0;}
