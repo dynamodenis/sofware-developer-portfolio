@@ -95,52 +95,17 @@ function complete(){
     timing=null
 }
 
-// // Name animation
-// const name=document.querySelector('.name');
-// const nameText=name.textContent
-// const nameSplit=nameText.split('')
-// console.log(nameSplit)
 
-// name.textContent=''
-// for(let i=0;i<nameSplit.length;i++){
-//     name.innerHTML+=`<span class="nameSpan">${nameSplit[i]}</span>`
-// }
-
-// let nameChar=0;
-// let nameTimer = setInterval(onTick,50)
-
-// function onTick(){
-//     const nameSpan = name.querySelectorAll('span')[nameChar];
-//     nameSpan.classList.add('animate')
-//     nameChar++
-
-//     if(nameChar==nameSplit.length){
-//         complete()
-//         return;
-//     }
-// }
-
-// function complete(){
-//     clearInterval(nameTimer)
-//     nameTimer=null
-// }
-
-// THE MY DETAILS IN THE LANDING PAGE SCREEN
+//THE MY DETAILS IN THE LANDING PAGE SCREEN
 function initialSetup() {
     setTimeout(function() {
      document.getElementById('nameDetail').style.display = 'block';
-    }, 2000);
+    }, 500);
   }
   
 initialSetup();
 
-// function getStarted() {
-//     setTimeout(function() {
-//     document.getElementById('getStarted').style.display = '';
-//     }, 2000);
-// }
 
-// getStarted();
 
 // ----------------------------------------------TYPEWRITER--------------------------------------------------------
 
