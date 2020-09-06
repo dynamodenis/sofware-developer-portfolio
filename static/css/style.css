@@ -176,7 +176,55 @@
     -moz-animation:spin 4s linear infinite;
     animation:spin 4s linear infinite;
 }
+/* ---------------------------------------------------Skills Styling------------------------------------------------------- */
+#skills{
+    height: 100vh;
+}
+.html{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 30px;
+}
 
+div[class^='tag-']{
+    clip-path: polygon(75% 0%,100% 50%,75% 100%,0% 100%,0% 50%,0% 0%);
+    width: 10%;
+    height: 30px;
+    background-color: rgba(0,0, 0,.6) ;
+    margin-right: 30px;
+    padding-left: 5px;
+}
+
+div[class^='tag-'] p{
+    text-align: left;
+    color: white;
+    font-size: 0.9rem;
+    padding-top: 5px;
+}
+.progressbar{
+    position: relative;
+    width: 70%;
+    height: 20px;
+    border: 1px solid #48CFAD;
+    border-radius: 20px;
+    margin-top: 7px;
+}
+
+div[class^='bar-']{
+    position: absolute;
+    background-color: #48CFAD;
+    height: 10px;
+    border-radius: 20px;
+    margin: 2.7px;
+}
+.bar-html,
+.bar-css,.bar-javascript, .bar-react, .bar-angular,.bar-django, .bar-django{
+    width: calc(0-6px);
+}
+
+
+/* ---------------------------------------------------Name in the background image------------------------------------------- */
 /* Name animate */
 
 .fancy span{
@@ -308,6 +356,24 @@ span.animate{
     #logos{
         font-size: 30px;
     }
+
+    .personal-contact{
+        display: grid;
+        grid-template-columns: 0.6fr 1.5fr 2fr;
+        /* background-color: grey; */
+        width: 100%;
+        overflow: hidden;
+        font-size: 0.8rem;
+        margin-top: 0;
+    }
+
+    .personal-details{
+        overflow: hidden;
+        text-align: center;
+        margin-top: 0;
+    
+    }
+
 
   }
   

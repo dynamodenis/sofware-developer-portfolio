@@ -174,6 +174,35 @@ function init(){
     const wait = txtElement.getAttribute('data-wait');
 
     new TypeWriter(txtElement,words,wait)
+
 }
 
+// -------------------------------------------------------SKILLS-----------------------------------------
 
+// const html = document.querySelector('.bar-html')
+// const css = document.querySelector('.bar-css')
+// const javascript = document.querySelector('.bar-javascript')
+// const react = document.querySelector('.bar-react')
+// const angular = document.querySelector('.bar-angular')
+// const django = document.querySelector('.bar-django')
+// const flask = document.querySelector('.bar-flask')
+
+// var tl = new TimelineLite();
+// //let tl=new TimelineMax();
+
+// tl.fromTo(html,1,{width:`calc(0%-6px)`},{width:`calc(90%-6px)`, ease:Linear.easeNone})
+//     .fromTo(css,.75,{width:`calc(0%-6px)`},{width:`calc(80%-6px)`, ease:Power4.easeOut} )
+//     .fromTo(javascript,.75,{width:`calc(0%-6px)`},{width:`calc(87%-6px)`, ease:Power4.easeOut} )
+//     .fromTo(react,.75,{width:`calc(0%-6px)`},{width:`calc(70%-6px)`, ease:Power4.easeOut} )
+//     .fromTo(angular,.75,{width:`calc(0%-6px)`},{width:`calc(70%-6px)`, ease:Power4.easeOut} )
+//     .fromTo(django,.75,{width:`calc(0%-6px)`},{width:`calc(90%-6px)`, ease:Power4.easeOut} )
+//     .fromTo(flask,.75,{width:`calc(0%-6px)`},{width:`calc(70%-6px)`, ease:Power4.easeOut} )
+
+
+// const controller = new ScrollMagic.Controller()
+// const scene = new ScrollMagic.Scene({
+//     triggerElement:'.skills',
+//     triggerHook:0
+// })
+// .setTween(tl)
+// .addTo(controller)

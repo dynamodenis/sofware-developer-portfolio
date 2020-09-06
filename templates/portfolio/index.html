@@ -55,6 +55,9 @@
                     <a class="nav-link" href="#projects" id="nav">Projects</a>
                 </li>
                 <li class="nav-item">
+                    <a class="nav-link" href="#skills" id="nav">Skills</a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link" href="#about" id="nav">About</a>
                 </li>
                 <li class="nav-item">
@@ -138,6 +141,70 @@
         </div>
     </div>
 
+    <!-- Skills -->
+    <!-- <div id="skills" class="offset">
+        <div class="container-fluid">
+            <legend class="legend">SKILLS</legend>
+            <div class="html">
+                <div class="tag-html">
+                    <p>HTML</p>
+                </div>
+                <div class="progressbar">
+                    <div class="bar-html"></div>
+                </div>
+            </div>
+            <div class="html">
+                <div class="tag-css">
+                    <p>CSS</p>
+                </div>
+                <div class="progressbar">
+                    <div class="bar-css"></div>
+                </div>
+            </div>
+            <div class="html">
+                <div class="tag-javascript">
+                    <p>JAVASCRIPT</p>
+                </div>
+                <div class="progressbar">
+                    <div class="bar-javascript"></div>
+                </div>
+            </div>
+            <div class="html">
+                <div class="tag-react">
+                    <p>REACT</p>
+                </div>
+                <div class="progressbar">
+                    <div class="bar-react"></div>
+                </div>
+            </div>
+            <div class="html">
+                <div class="tag-angular">
+                    <p>ANGULAR</p>
+                </div>
+                <div class="progressbar">
+                    <div class="bar-angular"></div>
+                </div>
+            </div>
+            <div class="html">
+                <div class="tag-django">
+                    <p>DJANGO</p>
+                </div>
+                <div class="progressbar">
+                    <div class="bar-django"></div>
+                </div>
+            </div>
+            <div class="html">
+                <div class="tag-flask">
+                    <p>FLASK</p>
+                </div>
+                <div class="progressbar">
+                    <div class="bar-flask"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    -->
+
         <!-- About -->
     <div id="about" class="offset">
         <div class="jumbotron mt-4" id="about">
@@ -211,19 +278,20 @@
                     <!-- Grid column -->
 
                     <!-- Grid column -->
-                    <div class="col-md-3 text-center">
-                    <ul class="list-unstyled mb-0">
-                        <li>
-                        <i class="fa fa-map-marker fa-2x" id="purple-text"></i>
-                        <p>Nairobi, Kenya</p>
+                    <div class="col-md-3 text-center ">
+                    <ul class="list-unstyled mb-0 personal-contact">
+                        <li class="personal-details">
+                            <i class="fa fa-map-marker fa-2x mt-4" id="purple-text"></i>
+                            <p>Nairobi, Kenya</p>
                         </li>
-                        <li>
-                        <i class="fa fa-phone fa-2x mt-4" id="purple-text"></i>
-                        <p>+254758818394</p>
+                        <li class="personal-details">
+                            <i class="fa fa-phone fa-2x mt-4" id="purple-text"></i>
+                            <p>+254758818394</p>
+                            <p><a href="tel:+254758818394">Click To Call</a></p>
                         </li>
-                        <li>
-                        <i class="fa fa-envelope fa-2x mt-4" id="purple-text"></i>
-                        <p class="mb-0">dmbugu66@gmail.com</p>
+                        <li class="personal-details">
+                            <i class="fa fa-envelope fa-2x mt-4" id="purple-text"></i>
+                            <p class="mb-0"><a href="mailto:dmbugua66@gmail.com.com?subject=My Website Inquiry">dmbugua66@gmail.com</a></p>
                         </li>
                     </ul>
                     </div>
@@ -288,6 +356,13 @@
     {% endblock %}
     {% block scripts %}
       <!-- JQuery -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TimelineLite.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js" ></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"></script>
+
+        <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/animation.gsap.min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/debug.addIndicators.min.js"></script>   
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script type='text/javascript' src="{%static 'js/style.js' %}"></script>
 
@@ -295,6 +370,7 @@
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TimelineMax.min.js"></script>
+        
     
         <!-- Bootstrap tooltips -->
         <!-- MDB core JavaScript -->
