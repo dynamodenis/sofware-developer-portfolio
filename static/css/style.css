@@ -1,6 +1,7 @@
 
 #body{
     font-family: 'Poppins',serif;
+    background: linear-gradient(to right, white,rgb(82, 75, 75));
 }
 /* scroll bar */
 #body::-webkit-scrollbar{
@@ -147,9 +148,10 @@
 .site:hover{
     background-color: rgb(66, 155, 155);
 }
+/* -----------------------------------------About me------------------------------------------------- */
 
 #about{
-    background-color: rgb(195, 195, 199);
+    background: linear-gradient(to right, white,rgb(82, 75, 75));
 }
 .legend-underline{
     border-width: 30px;
@@ -179,7 +181,14 @@
 /* ---------------------------------------------------Skills Styling------------------------------------------------------- */
 #skills{
     height: 100vh;
+    background: linear-gradient(to right, white,rgb(82, 75, 75));
+    margin-bottom: 0;
 }
+
+/* #skills.is-visible{
+    height: auto;
+    opacity: 1;
+} */
 .html{
     display: flex;
     flex-wrap: wrap;
@@ -203,7 +212,7 @@ div[class^='tag-'] p{
     padding-top: 5px;
 }
 .progressbar{
-    position: relative;
+    /* position: relative; */
     width: 70%;
     height: 20px;
     border: 1px solid #48CFAD;
@@ -211,17 +220,23 @@ div[class^='tag-'] p{
     margin-top: 7px;
 }
 
-div[class^='bar-']{
-    position: absolute;
-    background-color: #48CFAD;
-    height: 10px;
+.bar-progress{
+    /* position: absolute; */
+    background:linear-gradient(to left, #48CFAD,#48CF);
+    height: 100%;
+    width: 0;
+    opacity: 0;
     border-radius: 20px;
-    margin: 2.7px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 1s ease;
+    /* margin: 2.7px; */
 }
-.bar-html,
+/* .bar-html,
 .bar-css,.bar-javascript, .bar-react, .bar-angular,.bar-django, .bar-django{
     width: calc(0-6px);
-}
+} */
 
 
 /* ---------------------------------------------------Name in the background image------------------------------------------- */
@@ -374,6 +389,21 @@ span.animate{
     
     }
 
+    /*----------------------------------------- Progress-Bar Tags ----------------------------*/
+    div[class^='tag-']{
+        width: 25%;
+        height: 20px;
+        margin-top: 7px;
+    }
 
+    div[class^='tag-'] p{
+        font-size: 0.7rem;
+        padding: 2px 1px;
+    }
+    .progressbar{
+        width: 65%;  
+    }
+
+   
   }
   
